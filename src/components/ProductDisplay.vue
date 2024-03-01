@@ -14,18 +14,25 @@ export default {
     this.fetchProductData();
   },
   methods: {
+    //////// Get Data dari API////////////////////
     async fetchProductData() {
+      //////////// Layar Loading muncul karena status loading true
       this.loading = true;
       try {
         const response = await fetch(
           `https://fakestoreapi.com/products/${this.currentProductId}`
         );
+
+        /////////// data disimpan dari JSON ke dalam variable data dan dimasukan ke variable product////////////
         const data = await response.json();
         this.product = data;
+
+        //////////// Merubah warna Background berdasarkan Category product dari data yang didapatkan//////////////
         this.setBgCategory();
       } catch (error) {
         console.error("Error fetching product data:", error);
       } finally {
+        //////////// Layar loading hilang karena proses pengambilan data selesai//////////
         this.loading = false;
       }
     },
@@ -95,28 +102,10 @@ export default {
               <p class="rating-product">2.9/5</p>
               <div>
                 <img
+                  v-for="index in 5"
+                  :key="index"
                   class="rating-star"
-                  v-bind:src="getStarImagePath(product.category.toLowerCase())"
-                  alt="star-image"
-                />
-                <img
-                  class="rating-star"
-                  v-bind:src="getStarImagePath(product.category.toLowerCase())"
-                  alt="star-image"
-                />
-                <img
-                  class="rating-star"
-                  v-bind:src="getStarImagePath(product.category.toLowerCase())"
-                  alt="star-image"
-                />
-                <img
-                  class="rating-star"
-                  v-bind:src="getStarImagePath(product.category.toLowerCase())"
-                  alt="star-image"
-                />
-                <img
-                  class="rating-star"
-                  v-bind:src="getStarImagePath(product.category.toLowerCase())"
+                  :src="getStarImagePath(product.category.toLowerCase())"
                   alt="star-image"
                 />
               </div>
