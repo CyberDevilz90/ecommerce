@@ -143,7 +143,7 @@ export default {
       <img class="bg-pattern" src="../assets/bg-pattern.png" alt="bg-pattern" />
       <div class="content">
         <div class="product-detail-container-unavailable">
-          <p class="unavailable-text">Product is Unavailable</p>
+          <p class="unavailable-text">This Product is Unavailable to Show</p>
           <div
             class="action-next-container"
             @click="getNextProduct"
