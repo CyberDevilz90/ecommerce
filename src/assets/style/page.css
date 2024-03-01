@@ -1,12 +1,14 @@
 :root {
- --DARK-BLUE: #002772;
- --PINK: #FDE2FF;
- --BLACK: #1E1E1E;
- --PURPLE: #720060;
- --LIGHT-BLUE: #D6E6FF;
- --GRAY: #3F3F3F;
- --LIGHT-GRAY: #DCDCDC;
- --WHITE: #FFFFFF;
+  --DARK-BLUE: #002772;
+  --PINK: #fde2ff;
+  --BLACK: #1e1e1e;
+  --PURPLE: #720060;
+  --LIGHT-BLUE: #d6e6ff;
+  --GRAY: #3f3f3f;
+  --LIGHT-GRAY: #dcdcdc;
+  --WHITE: #ffffff;
+  --bg-color: var(--LIGHT-GRAY);
+  --bg-color-2: var(--LIGHT-GRAY);
 }
 
 #app {
@@ -22,7 +24,7 @@
   object-fit: cover;
 }
 .bg-container {
-  background-color: var(--PINK);
+  background-color: var(--bg-color);
   margin: -5px;
 }
 .content {
@@ -41,11 +43,116 @@
 .image-product-container {
   width: 30%;
   height: 80%;
+  max-height: 80%;
   margin-top: 50px;
   margin-left: 20px;
   margin-right: 70px;
+  display: flex;
 }
 .image-product {
   width: 100%;
-  object-fit: cover;
+}
+.product-detail-container {
+  max-width: 800px;
+}
+.title-product {
+  font-size: 28px;
+  line-height: 33px;
+  font-weight: 600;
+  color: var(--bg-color-2);
+  max-width: 800px;
+}
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.score-star {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  height: 20px;
+  padding: 20px;
+}
+.rating-star {
+  width: 18px;
+  height: 18px;
+  margin-top: -4px;
+  margin-left: -5px;
+  margin-right: 5px;
+}
+.rating-product {
+  margin-top: -4px;
+  margin-right: 20px;
+}
+.category-product {
+  margin-right: 50px;
+  margin-left: 10px;
+}
+.line-break {
+  height: 1px;
+  background-color: var(--GRAY);
+}
+.description-product {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  height: 250px;
+  margin-top: 25px;
+}
+.product-price {
+  color: var(--PURPLE);
+  font-size: 28px;
+  font-weight: 600;
+  text-align: left;
+}
+.action-user-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 25px;
+}
+.action-buy-container {
+  background-color: var(--PURPLE);
+  width: 50%;
+  border-radius: 4px;
+}
+.action-next-container {
+  width: 50%;
+  border-width: 2px;
+  border-color: var(--PURPLE);
+  border-style: double;
+  border-radius: 4px;
+}
+.buy-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--WHITE);
+}
+.next-text {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--PURPLE);
+}
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.product-detail-container-unavailable {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-image:url("../sad-face.png");
+  background-size: cover;
+  padding: 25px;
 }
